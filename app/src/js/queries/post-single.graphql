@@ -1,0 +1,28 @@
+query postSingle($slug: String!) {
+    post(slug: $slug) {
+        id
+        date
+        dateGmt
+        slug
+        title
+        excerpt
+        link
+        shares
+        commentsCount
+        featured {
+            id
+            slug
+            sizes {
+                name
+                url
+            }
+        }
+        content
+        author {
+            id
+            slug
+            name
+            avatar
+        }
+    }
+}

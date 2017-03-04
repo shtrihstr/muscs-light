@@ -1,0 +1,36 @@
+.author
+  padding: 10px $size-box-margin 0
+  line-height: $line-height-headers
+  color: $color-side
+  font-family: $sans-serif-font-family
+  +clearfix
+
+  &-avatar
+    float: left
+    margin: 0 15px 0 0
+    width: 40px
+    height: 40px
+    &.loader
+      background: darken($color-loading, 1%)
+      border-radius: 50%
+
+    img
+      display: block
+      border-radius: 50%
+      width: 100%
+
+  .author-name
+    display: block
+    margin-left: 40px + 15px
+    &.loader
+      position: relative
+      &:before
+        content: ""
+        position: absolute
+        left: 0
+        top: 50%
+        width: 50%
+        height: round($font-size-base * 0.7)
+        margin-top: - round($font-size-base * 0.7 / 2)
+        background: darken($color-loading, 1%)
+

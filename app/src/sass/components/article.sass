@@ -1,0 +1,124 @@
+.post
+  margin-bottom: $size-box-margin
+  background: #fff
+  box-shadow: 0 1px 4px rgba(0,0,0,.04)
+  border: 1px solid rgba(0,0,0,.09)
+  border-radius: 3px
+
+  .excerpt
+    margin-left: $size-box-margin
+    margin-right: $size-box-margin
+
+  .content
+    margin-left: $size-box-margin
+    margin-right: $size-box-margin
+    line-height: $line-height-content
+    +clearfix
+
+.post-header
+
+  .post-image
+    border-radius: 3px 3px 0 0
+    padding-bottom: 62%
+    height: 0
+    overflow: visible
+    &.loader
+      background: $color-loading
+      overflow: hidden
+
+    .inactive &
+      position: relative
+      &:after
+        content: "Offline"
+        position: absolute
+        display: block
+        padding: 3px 5px
+        border-radius: 3px
+        font-family: $sans-serif-font-family
+        background: $color-contrast
+        color: white
+        left: 10px
+        top: 10px
+        font-weight: lighter
+
+    img
+      display: block
+      width: 100%
+      border-radius: 3px 3px 0 0
+      .inactive &
+        opacity: 0.5
+
+  .post-title
+    font-size: 1.5em
+    margin: 15px $size-box-margin
+    &.loader
+      position: relative
+      &:before
+        content: ""
+        position: absolute
+        left: 0
+        top: 50%
+        width: 70%
+        height: round($font-size-base * 1.5 * 0.7)
+        margin-top: - round($font-size-base * 1.5 * 0.7 / 2)
+        background: darken($color-loading, 5%)
+
+
+.post-meta
+  $height: $font-size-base
+  margin: 0 $size-box-margin $size-box-margin
+  vertical-align: middle
+  font-size: 0.88em
+  color: $color-side
+  font-family: $sans-serif-font-family
+  line-height: $height
+
+  .fb-count, .comments-count, .post-date
+    display: inline-block
+    &.loader
+      background: $color-loading
+      width: 20px
+      height: round($font-size-base * 0.88 * 0.7)
+      &:before
+        display: none
+
+  .fb-count
+    margin: 0 15px
+
+  .fb-count:before, .comments-count:before
+      content: ""
+      display: inline-block
+      margin: 0 2px 0 0
+      vertical-align: bottom
+      background:
+        repeat: no-repeat
+        position: left center
+        size: contain
+
+  .fb-count:before
+    height: 16px
+    width: 18px
+    background-image: url(../icons/fb-coun.svg)
+
+  .comments-count:before
+    height: 16px
+    width: 18px
+    background-image: url(../icons/comments-count.svg)
+
+.post-end
+  height: $size-box-margin
+
+
+.text-loader
+  margin: 0 $size-box-margin
+
+  div
+    $height: round($font-size-base * 1.2 * 0.7)
+    $line-height: round($font-size-base * 1.2 * 1.6)
+    height: $height
+    margin: (($line-height - $height) / 2) 0
+    background: $color-loading
+    & + div
+      width: 90%
+      & + div
+        width: 60%

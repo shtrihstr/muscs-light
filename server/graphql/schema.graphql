@@ -1,0 +1,56 @@
+type Query {
+    posts(limit: Int, offset: Int, before: String): [Post!]
+    post(slug: String!): Post
+}
+
+type Post {
+    id: ID!
+    date: String!
+    dateGmt: String!
+    guid: String!
+    link: String!
+    modified: String!
+    modifiedGmt: String!
+    slug: String!
+    type: String!
+    title: String!
+    content: String!
+    author: User
+    excerpt: String
+    featured: Media
+    commentStatus: String
+    commentsCount: Int!
+    shares: Int!
+}
+
+type User {
+    id: ID!
+    name: String
+    url: String
+    description: String
+    link: String
+    slug: String
+    avatar: String
+}
+
+type Media {
+    id: ID!
+    link: String!
+    slug: String!
+    title: String!
+    author: User
+    altText: String!
+    caption: String!
+    description: String!
+    mediaType: String!
+    mimeType: String!
+    sourceUrl: String!
+    sizes: [ImageSize]!
+}
+
+type ImageSize {
+    url: String!
+    name: String!
+    height: Int!
+    width: Int!
+}

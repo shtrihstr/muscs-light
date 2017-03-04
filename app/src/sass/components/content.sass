@@ -1,0 +1,75 @@
+.content
+  word-break: break-word
+
+  .related
+    border-left: 4px solid $color-contrast
+    margin: $size-box-margin 0
+    padding: 0 0 0 $size-box-margin
+    &:before
+      content: "Relaterte saker"
+      display: block
+      @extend h3
+    img
+      display: block
+      margin-top: $size-box-margin
+    .related-link
+      display: none
+    .post-helper a
+      text-decoration: none !important
+      color: inherit
+
+
+  .wp-caption
+    width: 100% !important
+
+    .wp-caption-text
+      margin-top: $size-box-margin / 2
+      font-style: italic
+
+  .flexslidergallery
+    margin: $size-box-margin 0
+    overflow: scroll
+
+    ul
+      padding: 0
+      margin: 0
+      list-style: none
+      white-space: nowrap
+      vertical-align: bottom
+
+      li
+        display: inline-block
+        width: 80%
+        padding: 0
+        margin: 0 $size-box-margin 0 0
+
+    .gallery-thumb
+      display: none
+
+  ul, ol
+    margin: $size-box-margin 0
+    padding: 0 0 0 $size-box-margin
+    li
+      margin-bottom: $size-box-margin
+
+  .paywall
+    .paywallform, .buttons
+      display: none
+
+  blockquote
+    border-left: 4px solid $color-contrast
+    margin: $size-box-margin 0
+    padding: 0 0 0 $size-box-margin
+    font-family: $sans-serif-font-family
+    font-size: 1.2em
+    font-weight: 300
+    &:before, &:after
+      content: ""
+  .quote
+    blockquote + p
+      margin-left: 4px
+      font-style: italic
+
+  iframe
+    width: 100%
+    border: 0 none

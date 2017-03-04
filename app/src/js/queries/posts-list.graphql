@@ -1,0 +1,21 @@
+query postsList($offset: Int, $limit: Int, $before: String) {
+    posts(offset: $offset, limit: $limit, before: $before) {
+        id
+        date
+        dateGmt
+        slug
+        title
+        excerpt
+        link
+        shares
+        commentsCount
+        featured {
+            id
+            slug
+            sizes {
+                name
+                url
+            }
+        }
+    }
+}
