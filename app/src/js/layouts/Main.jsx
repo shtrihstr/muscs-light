@@ -25,7 +25,9 @@ class Main extends Component {
         return (
             <div className="wrap">
                 <header className="top-bar">
-                    {this.renderTopBar()}
+                    <div className="width-container">
+                        {this.renderTopBar()}
+                    </div>
                 </header>
                 <main>
                     { this.props.children }

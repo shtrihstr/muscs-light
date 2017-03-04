@@ -8,7 +8,9 @@ class Home extends Component {
         return (
             <div className="wrap-feed">
                 <div className="top-sub-bar">
-                    <h1 className="hero">Supporters’ Club, Scandinavia</h1>
+                    <div className="width-container">
+                        <h1 className="hero">Supporters’ Club, Scandinavia</h1>
+                    </div>
                 </div>
                 <Feed />
             </div>

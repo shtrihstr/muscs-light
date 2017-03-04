@@ -58,7 +58,9 @@ class SingleArticle extends Component {
             return (
                 <div className="wrapp-single">
                     <div className="top-sub-bar">
-                        <Author />
+                        <div className="width-container">
+                            <Author />
+                        </div>
                     </div>
                     <section className="single">
                         <ArticleLoader />
@@ -72,7 +74,9 @@ class SingleArticle extends Component {
         return (
             <div className="wrap-single">
                 <div className="top-sub-bar">
-                    <Author user={post.author} />
+                    <div className="width-container">
+                        <Author user={post.author} />
+                    </div>
                 </div>
                 <section className="single">
                     <Article key={post.id} post={post} type="single" />
