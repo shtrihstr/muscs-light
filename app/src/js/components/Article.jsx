@@ -47,7 +47,9 @@ const ArticleFull = (props) => {
     return (
         <article key={post.id} className="post">
             <Header post={post} h1 />
-            <div className="hero excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+            <div className="hero excerpt">
+                <ActiveHtml html={post.excerpt} />
+            </div>
             <Footer post={post} />
             { fullLoaded ? <div className="content"><ActiveHtml html={post.content} /></div> : <TextLoader />}
             <div className="post-end" />
@@ -60,7 +62,9 @@ const ArticleShort = (props) => {
 
     const body = [
         <Header key={0} post={post} />,
-        <div key={1} className="hero excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }} />,
+        <div key={1} className="hero excerpt">
+            <ActiveHtml html={post.excerpt} />
+        </div>,
         <Footer key={2} post={post} />
     ];
 

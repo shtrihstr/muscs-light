@@ -83,7 +83,7 @@ class Feed extends Component {
 
             const screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
-            if (scrollTop + screenHeight > (documentHeight - screenHeight)) {
+            if (scrollTop + screenHeight > (documentHeight - screenHeight * 3)) {
                 this.loadMore();
             }
         }

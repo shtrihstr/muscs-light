@@ -1,16 +1,19 @@
 import toolbox from 'sw-toolbox';
 
+toolbox.options.cache.name = 'v1';
+
 toolbox.precache(['/', '/index.html', '/app.js', '/css/style.css']);
 
 // static files
 const staticRegEx = /(js|css|png|jpe?g|gif|svg|bmp|tiff?|woff|woff2|ttf|ttc|otf|eot)(\?.*)?$/gi;
-toolbox.router.get(staticRegEx, toolbox.cacheFirst);
+toolbox.router.get(staticRegEx, toolbox.networkFirst);
 
 // gavatar
-toolbox.router.get(/\/avatar\//gi, toolbox.cacheFirst);
+toolbox.router.get(/\/avatar\//gi, toolbox.networkFirst);
 
 toolbox.router.get('/', toolbox.networkFirst);
 toolbox.router.get('/nyhetsarkiv/(.*)', toolbox.networkFirst);
+toolbox.router.get('/leserbrev/(.*)', toolbox.networkFirst);
 
 
 const graphqlCache = 'graphql-v1';

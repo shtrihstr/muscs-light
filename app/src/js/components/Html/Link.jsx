@@ -6,7 +6,7 @@ export default class Link extends Component {
     render() {
         const href = this.props.href || '';
 
-        const isLocal = /^\//.test(href) || /^http(s)?:\/\/(www\.)?united\.no(\/|\/nyhetsarkiv\/.*)$/.test(href);
+        const isLocal = /^\//.test(href) || /^http(s)?:\/\/(www\.)?united\.no(\/|\/nyhetsarkiv\/.*|\/leserbrev\/.*)$/.test(href);
 
         if (isLocal) {
             const to = href.replace(/^http(s)?:\/\/(www\.)?united\.no\//, '/');

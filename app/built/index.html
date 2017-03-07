@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>MUSCS Light</title>
+    <meta name="robots" content="noindex, nofollow" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -11,11 +13,13 @@
 <div id="app"></div>
 <script src="/app.js"></script>
 <script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/serviceWorker.js', {
-            scope: './'
-        });
-    }
+    (function(){
+        if (!!navigator && 'serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/serviceWorker.js', {
+                scope: './'
+            });
+        }
+    })();
 </script>
 </body>
 </html>
